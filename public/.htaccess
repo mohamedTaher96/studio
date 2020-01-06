@@ -1,10 +1,9 @@
 <IfModule mod_rewrite.c>
     <IfModule mod_negotiation.c>
-        DirectoryIndex index.html index.php
+        Options +SymLinksIfOwnerMatch.
     </IfModule>
 
     RewriteEngine On
-    DirectoryIndex index.php # This line does the trick
 
 
     # Handle Authorization Header
@@ -19,5 +18,7 @@
     # Handle Front Controller...
     RewriteCond %{REQUEST_FILENAME} !-d
     RewriteCond %{REQUEST_FILENAME} !-f
-    RewriteRule ^ index.php [L]
+    RewriteRule "^(.*)$ public/$1" [L]
+
+
 </IfModule>
