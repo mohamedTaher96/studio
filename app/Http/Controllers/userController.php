@@ -19,20 +19,20 @@ class userController extends Controller
 {
     public function home()
     {
-        // $arbicLanguage = DB::table('languages')->pluck('ar', 'key');
-        // $englishLanguage = DB::table('languages')->pluck('en', 'key');
-        // $covers = DB::table('covers')->where('type', 'moveable')->get();
-        // $links =  DB::table('links')->get();
-        // session_start();
-        // if(isset($_SESSION['language']))
-        // {
-        //     if($_SESSION['language']=="English")
-        //     {
-        //         return view('user/pages/home')->with(["language"=>$englishLanguage,"covers"=>$covers,"links"=>$links]);
-        //     }
-        // }
-        // return view('user/pages/home')->with(["language"=>$arbicLanguage,"covers"=>$covers,"links"=>$links]);
-        return view('user/pages/home');
+        $arbicLanguage = DB::table('languages')->pluck('ar', 'key');
+        $englishLanguage = DB::table('languages')->pluck('en', 'key');
+        $covers = DB::table('covers')->where('type', 'moveable')->get();
+        $links =  DB::table('links')->get();
+        session_start();
+        if(isset($_SESSION['language']))
+        {
+            if($_SESSION['language']=="English")
+            {
+                return view('user/pages/home')->with(["language"=>$englishLanguage,"covers"=>$covers,"links"=>$links]);
+            }
+        }
+        return view('user/pages/home')->with(["language"=>$arbicLanguage,"covers"=>$covers,"links"=>$links]);
+
     }
     public function about()
     {
