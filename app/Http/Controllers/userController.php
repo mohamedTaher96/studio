@@ -36,7 +36,6 @@ class userController extends Controller
     }
     public function about()
     {
-        dd('dfg');
         $arbicLanguage = DB::table('languages')->pluck('ar', 'key');
         $englishLanguage = DB::table('languages')->pluck('en', 'key');
         $cover = DB::table('covers')->where('type', 'static')->first();
