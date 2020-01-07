@@ -36,7 +36,7 @@
         <div class="box">
                 <div class="box-header">
                   <h3 class="box-title">  الصور  </h3>
-                  <a href="http://localhost:8000/admin/gallery/images/new/" role="button" class="btn btn-primary" >إضافة صورة</a>
+                  <a href="https://studio-20.herokuapp.com/admin/gallery/images/new/" role="button" class="btn btn-primary" >إضافة صورة</a>
                 </div><!-- /.box-header -->
                 <div class="box-body">
                   <table id="example1" class="table table-bordered table-striped">

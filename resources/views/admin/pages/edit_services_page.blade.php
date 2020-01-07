@@ -81,7 +81,7 @@
                     window.setTimeout(function() {
                         $(".alert").fadeTo(500, 0).slideUp(500, function(){
                             $(this).remove(); 
-                            location.assign('http://localhost:8000/admin/editPages');
+                            location.assign('https://studio-20.herokuapp.com/admin/editPages');
                         });
                     }, 1000);
                     

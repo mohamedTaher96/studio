@@ -19,7 +19,7 @@
                     إرسال بريد 
                   </h1>
                   <ol class="breadcrumb">
-                    <li><a href="http://localhost:8000/admin"><i class="fa fa-dashboard"></i> الرئيسيه</a></li>
+                    <li><a href="https://studio-20.herokuapp.com/admin"><i class="fa fa-dashboard"></i> الرئيسيه</a></li>
                     <li class="active">البريد</li>
                   </ol>
                 </section>
@@ -37,8 +37,8 @@
                         </div>
                         <div class="box-body no-padding">
                           <ul class="nav nav-pills nav-stacked">
-                            <li><a href="http://localhost:8000/admin/messages/"><i class="fa fa-inbox"></i> الوارد <span class="label label-primary pull-right">{{$unread}}</span></a></li>
-                            <li><a href="http://localhost:8000/admin/messages/exports"><i class="fa fa-envelope-o"></i> الصادر</a></li>
+                            <li><a href="https://studio-20.herokuapp.com/admin/messages/"><i class="fa fa-inbox"></i> الوارد <span class="label label-primary pull-right">{{$unread}}</span></a></li>
+                            <li><a href="https://studio-20.herokuapp.com/admin/messages/exports"><i class="fa fa-envelope-o"></i> الصادر</a></li>
                             <li><a onclick="return confirm('Are you sure you want to delete message?')" href="/admin/messages/order/delete?id={{Request::get('id')}}"><i class="fa fa-trash-o"></i> مسح</a></li>
                           </ul>
                         </div><!-- /.box-body -->

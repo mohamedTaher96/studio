@@ -48,7 +48,7 @@
                 <div class="icon">
                   <i class="   "></i>
                 </div>
-                <a href="http://localhost:8000/admin/orders/packages/" class="small-box-footer"> تعديل <i class="fa fa-arrow-circle-left"></i></a>
+                <a href="https://studio-20.herokuapp.com/admin/orders/packages/" class="small-box-footer"> تعديل <i class="fa fa-arrow-circle-left"></i></a>
               </div>
             </div><!-- ./col -->
           @endif
@@ -70,7 +70,7 @@
                 <div class="icon">
                   <i class=""></i>
                 </div>
-                <a href="http://localhost:8000/admin/gallery/" class="small-box-footer"> تعديل <i class="fa fa-arrow-circle-left"></i></a>
+                <a href="https://studio-20.herokuapp.com/admin/gallery/" class="small-box-footer"> تعديل <i class="fa fa-arrow-circle-left"></i></a>
               </div>
             </div><!-- ./col -->
           @endif

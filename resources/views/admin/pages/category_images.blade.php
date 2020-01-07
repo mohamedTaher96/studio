@@ -22,9 +22,9 @@
         </h1>
         
         <br>
-        <a class="btn btn-primary" href="http://localhost:8000/admin/gallery/images/new/">إضافة صور</a>
+        <a class="btn btn-primary" href="https://studio-20.herokuapp.com/admin/gallery/images/new/">إضافة صور</a>
         <a href="/admin/gallery/images">كل الصور</a>
-        {{-- <a href="http://localhost:8000/admin/gallery/images/"> كل الصور</a> --}}
+        {{-- <a href="https://studio-20.herokuapp.com/admin/gallery/images/"> كل الصور</a> --}}
     </section>
     <section class="content">
         <div class="row">
@@ -32,7 +32,7 @@
                 <div class="col-xs-6 col-sm-4 col-md-3 ">
                     
                     <img src="{{asset('images/category_images/'.$image->src."")}}" alt="...">
-                    <a role="button" class="btn btn-link" onclick="return confirm('are you sure you want to delete the image')" href="http://localhost:8000/admin/gallery/images/delete?id={{$image->id}}">delete</a>
+                    <a role="button" class="btn btn-link" onclick="return confirm('are you sure you want to delete the image')" href="https://studio-20.herokuapp.com/admin/gallery/images/delete?id={{$image->id}}">delete</a>
                     
                 </div>
             

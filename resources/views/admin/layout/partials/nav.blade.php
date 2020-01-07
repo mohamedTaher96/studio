@@ -1,6 +1,6 @@
 <header class="main-header">
         <!-- Logo -->
-        <a href="http://localhost:8000/admin" class="logo">
+        <a href="https://studio-20.herokuapp.com/admin" class="logo">
           <!-- mini logo for sidebar mini 50x50 pixels -->
           <span class="logo-mini"><b>S</b> A</span>
           <!-- logo for regular state and mobile devices -->
@@ -17,7 +17,7 @@
               <!-- Messages: style can be found in dropdown.less-->
               @if (Session::has('الرسائل'))
               <li class="dropdown messages-menu">
-                  <a href="http://localhost:8000/admin/messages/" >
+                  <a href="https://studio-20.herokuapp.com/admin/messages/" >
                     <i class="fa fa-envelope-o"></i>
                     <span class="label label-danger">{{$unread}}</span>
                   </a>
@@ -42,10 +42,10 @@
                   <!-- Menu Footer-->
                   <li class="user-footer">
                     <div class="pull-right">
-                      <a href="http://localhost:8000/admin/profile" class="btn btn-default btn-flat">الصفحة الشخصية</a>
+                      <a href="https://studio-20.herokuapp.com/admin/profile" class="btn btn-default btn-flat">الصفحة الشخصية</a>
                     </div>
                     <div class="pull-left">
-                      <a href="http://localhost:8000/logout" class="btn btn-default btn-flat">تسجيل خروج </a>
+                      <a href="https://studio-20.herokuapp.com/logout" class="btn btn-default btn-flat">تسجيل خروج </a>
                     </div>
                   </li>
                 </ul>
