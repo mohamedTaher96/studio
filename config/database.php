@@ -41,11 +41,12 @@ return [
 
         'mysql' => [
             'driver' => 'mysql',
-            'host' => env('DB_HOST', '127.0.0.1'),
+            // 'url' => env('http://185.27.134.10/db_structure.php?db=epiz_25025772_studio2020'),
+            'host' => env('DB_HOST', 'sql2.freesqldatabase.com'),
             'port' => env('DB_PORT', '3306'),
-            'database' => env('DB_DATABASE', 'studio'),
-            'username' => env('DB_USERNAME', 'root'),
-            'password' => env('DB_PASSWORD', ''),
+            'database' => env('DB_DATABASE', 'sql2318132'),
+            'username' => env('DB_USERNAME', 'sql2318132'),
+            'password' => env('DB_PASSWORD', 'tX7%dV1!'),
             'unix_socket' => env('DB_SOCKET', ''),
             'charset' => 'utf8mb4',
             'collation' => 'utf8mb4_unicode_ci',
