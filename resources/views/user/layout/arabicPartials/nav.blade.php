@@ -11,7 +11,7 @@
             <div class="collapse navbar-collapse" id="navbar-collapse-1">
                     <ul class="nav navbar-nav navbar-right text-align-left">
                     <li class="home"><a href="https://studio-20.herokuapp.com/">{{$language['home']}}</a></li>
-                        <li class="about"><a href="https://studio-20.herokuapp.com/about"> {{$language['about']}}</a></li>
+                        <li class="about"><a href="/about/ss"> {{$language['about']}}</a></li>
                         <li class="service"><a href="https://studio-20.herokuapp.com/services">{{$language['service']}}</a></li>
                     </ul>
                     <a href="/home" class="navbar-brand hidden-xs text-center"><img src="{{asset('images/user/logo.png')}}" alt="LOGO"></a>   
