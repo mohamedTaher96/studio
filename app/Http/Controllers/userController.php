@@ -248,9 +248,9 @@ class userController extends Controller
     }
     public function contactData(Request $request)
     {
-        dd("SD");
         session_start();
         $newOrder = new order;
+        dd($newOrder);
         $validator = validator::make($request->all(),[
             'company_name'=>'required',
             'acticity'=>'required',
