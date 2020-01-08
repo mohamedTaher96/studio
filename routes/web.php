@@ -14,7 +14,7 @@
 //user
 Route::get('/','userController@home');
 Route::get('/about','userController@about');
-Route::get('https://studio-20.herokuapp.com/services','userController@services');
+Route::get('/services','userController@services');
 Route::get('/gallery','userController@gallery');
 Route::get('gallery/category','userController@category');
 Route::get('/contact','userController@contact');
