@@ -76,7 +76,7 @@
             <small> </small>
             </h1>
             <br>
-            <a class="btn btn-primary" href="profile">تعديل</a>
+            <a class="btn btn-primary" href="cover/profile">تعديل</a>
     </section>
 @endsection
 @section('script')
