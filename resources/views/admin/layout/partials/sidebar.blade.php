@@ -27,7 +27,7 @@
           <li><a href="https://studio-20.herokuapp.com/admin/other/subscribers/"><i class="fa fa-circle-o"></i>  المشتركون  </a></li>
         @endif
         @if (Session::has('الصور والتصنيفات'))
-          <li><a href="https://studio-20.herokuapp.com/admin/gallery/category/"><i class="fa fa-circle-o"></i>  معرض الصور  </a></li>
+          <li><a href="https://studio-20.herokuapp.com/admin/gallery/"><i class="fa fa-circle-o"></i>  معرض الصور  </a></li>
         @endif
         @if (Session::has('الرزم والخيارات'))
           <li><a href="https://studio-20.herokuapp.com/admin/orders/packages/"><i class="fa fa-circle-o"></i>  الأوردر  </a></li>
