@@ -12,7 +12,7 @@
 */
 
 //user
-Route::get('/','userController@home');
+Route::get('/','userController@about');
 Route::get('/about','userController@about');
 Route::get('/services','userController@services');
 Route::get('/gallery','userController@gallery');
