@@ -364,7 +364,7 @@ class userController extends Controller
         ]);
         if($validator->fails())
         {
-            if($_SESSION['language']=='English')
+            if(isset($_SESSION['language']))
             {
                 return back()->with(['enSubError'=>'true']);
             }else
@@ -376,7 +376,7 @@ class userController extends Controller
             $newUser = new subscribe;
             $newUser->email = $request->email;
             $newUser->save();
-            if($_SESSION['language']=='English')
+            if(isset($_SESSION['language']))
             {
                 return back()->with(['enSubscribe'=>'true']);
             }else
