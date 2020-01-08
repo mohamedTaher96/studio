@@ -332,7 +332,7 @@ class adminController extends Controller
             $unread = DB::table('orders')->where('view', 0)->count();
             $data = new link;
             $link = $data::find($request->id);
-            return view('admin/pages/oldlink')->with(["link"=>$link, "admin"=>$admin,"unread"=>$unread]);
+            return view('admin/pages/oldlink');
         }else
         {
             return redirect('admin/login')->with(['error'=>'true']);
