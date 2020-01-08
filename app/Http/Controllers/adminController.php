@@ -782,7 +782,7 @@ class adminController extends Controller
                 $connectClientTable->name = $request->name;
                 $connectClientTable->category_img = $getimageName;
                 $connectClientTable->save();
-                return  redirect("/admin/gallery/category\/")
+                return  redirect("/admin/gallery/")
                 ->with(['add'=>"true"]); 
             }
         }else
@@ -864,7 +864,7 @@ class adminController extends Controller
                 unlink($file_path);
                 $request->logo->move(public_path('images/categories'), $getimageName);
                 DB::table('category')->where('id', $request->id)->update(["category_img"=>$getimageName]);
-                return redirect('/admin/gallery/category\/')->with(['edit'=>"true"]);
+                return redirect('/admin/gallery/')->with(['edit'=>"true"]);
             }
         }else
         {
