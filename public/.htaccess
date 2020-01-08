@@ -1,10 +1,9 @@
 <IfModule mod_rewrite.c>
     <IfModule mod_negotiation.c>
-        Options +SymLinksIfOwnerMatch.
+        Options -MultiViews -Indexes
     </IfModule>
 
     RewriteEngine On
-
 
     # Handle Authorization Header
     RewriteCond %{HTTP:Authorization} .
@@ -18,7 +17,5 @@
     # Handle Front Controller...
     RewriteCond %{REQUEST_FILENAME} !-d
     RewriteCond %{REQUEST_FILENAME} !-f
-    RewriteRule "^(.*)$ public/$1" [L]
-
-
+    RewriteRule ^ index.php [L]
 </IfModule>
