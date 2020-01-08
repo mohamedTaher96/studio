@@ -105,7 +105,7 @@ Route::post('/admin/orders/packages/option/new/add','adminController@addOption')
 Route::get('/admin/orders/packages/option/delete','adminController@deleteOption');
 Route::get('/admin/orders/packages/','adminController@packages');
 Route::get('/admin/orders/packages/new/','adminController@newPackage');
-Route::post('/admin/orders/packages/add','adminController@addPackage');
+Route::post('/admin/orders/packages/new/add','adminController@addPackage');
 Route::get('/admin/orders/packages/delete','adminController@deletePackage');
 Route::get('/admin/orders/packages/edit','adminController@editPackage');
 Route::post('/admin/orders/packages/update','adminController@updatePackage');
