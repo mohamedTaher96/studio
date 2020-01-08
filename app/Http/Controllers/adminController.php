@@ -332,7 +332,6 @@ class adminController extends Controller
             $unread = DB::table('orders')->where('view', 0)->count();
             $data = new link;
             $link = $data::find($request->id);
-            dd($link);
             return view('admin/pages/oldlink')->with(["link"=>$link, "admin"=>$admin,"unread"=>$unread]);
         }else
         {
@@ -482,7 +481,7 @@ class adminController extends Controller
             $connectCoverTable = new cover;
             $cover = $connectCoverTable::find($request->id);
             $file_path = public_path().'/images/covers/'.$cover->src;
-            // unlink($file_path);
+            unlink($file_path);
             $cover->delete();
             return back()->with(["delete"=>"true"]);
         }else

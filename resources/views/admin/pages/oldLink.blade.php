@@ -15,7 +15,7 @@
     <form >
         @csrf
         <div class="form-group">
-            <input class="form-control" id="link" value="{{$link->url}}"> 
+            <input class="form-control" id="link" link_id={{$link->id}} value="{{$link->url}}"> 
         </div>
         <div class="form-group">
             <input id="submit"  class="btn btn-primary" value="تعديل">
@@ -28,10 +28,12 @@
         $("#submit").click(function(e){
             e.preventDefault();
             var link = $("#link").val();
+            var link_id = $("#link").attr('link_id');
+            console.log(link_id)
             $.ajax({
                 url:"new",
                 type:"POST",
-                data:{id:{{$link->id}},link:link},
+                data:{id:link_id,link:link},
                 headers:
 		        {
             		'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
