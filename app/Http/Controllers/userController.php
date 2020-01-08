@@ -248,6 +248,7 @@ class userController extends Controller
     }
     public function contactData(Request $request)
     {
+        dd("SD");
         session_start();
         $newOrder = new order;
         $validator = validator::make($request->all(),[

@@ -727,7 +727,7 @@ class adminController extends Controller
                 $body .= "
                 <tr>
                 <td> $category->name </td>
-                <td> <a target='_blank' rel='noopener noreferrer' href='localhost:8000/images/categories/".$category->category_img."'><img src='http://localhost:8000/images/categories/".$category->category_img."' ></a> </td>
+                <td> <a target='_blank' rel='noopener noreferrer' href='localhost:8000/images/categories/".$category->category_img."'><img src='/images/categories/".$category->category_img."' ></a> </td>
                 <td ><a target='_blank' rel='noopener noreferrer' href='category/images?category_id=$category->id '> صورة : $images </a></td>
                 <td>$category->created_at </td>
                 <td><a role='button' class='btn btn-primary' href='category/edit?id=$category->id'>تعديل</a >
@@ -910,7 +910,7 @@ class adminController extends Controller
                 $body .= "
                 <tr>
                 <td>$categoryName->name </td>
-                <td> <a target='_blank' rel='noopener noreferrer'  href='http://localhost:8000/images/category_images/".$image->src."'><img src='http://localhost:8000/images/category_images/".$image->src."'></a></td>
+                <td> <a target='_blank' rel='noopener noreferrer'  href='/images/category_images/".$image->src."'><img src='/images/category_images/".$image->src."'></a></td>
                 <td>$image->created_at</td>
                 <td>
                     <a role='button' class='btn btn-primary' onclick='return confirm(\"are you sure you want to delete this image\")' href='delete?id=$image->id'>delete</a>
