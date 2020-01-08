@@ -20,7 +20,7 @@
                   <div class="icon">
                     <i class=""></i>
                   </div>
-                  <a href="links/" class="small-box-footer"> تعديل <i class="fa fa-arrow-circle-left"></i></a>
+                  <a href="others/links/" class="small-box-footer"> تعديل <i class="fa fa-arrow-circle-left"></i></a>
                 </div>
               </div><!-- ./col -->
               <div class="col-lg-3 col-sm-4 col-xs-6">
@@ -33,7 +33,7 @@
                   <div class="icon">
                     <i class=""></i>
                   </div>
-                  <a href="cover/" class="small-box-footer"> تعديل <i class="fa fa-arrow-circle-left"></i></a>
+                  <a href="others/cover/" class="small-box-footer"> تعديل <i class="fa fa-arrow-circle-left"></i></a>
                 </div>
               </div><!-- ./col -->
               <div class="col-lg-3 col-sm-4 col-xs-6">

@@ -142,8 +142,8 @@ class adminController extends Controller
                 $html .= 
                 "<tr>
                     <td>$pageName->ar</td>
-                    <td><a  class='btn btn-primary' href='edit/ar?id=$page->id'>تعديل</a></td>
-                    <td><a role='button' class='btn btn-primary' href='edit/en?id=$page->id'>تعديل</a></td>
+                    <td><a  class='btn btn-primary' href='content/edit/ar?id=$page->id'>تعديل</a></td>
+                    <td><a role='button' class='btn btn-primary' href='content/edit/en?id=$page->id'>تعديل</a></td>
                 ";
             }
             return view('admin/pages/pageContent')->with(['html'=>$html, "admin"=>$admin,"unread"=>$unread]);

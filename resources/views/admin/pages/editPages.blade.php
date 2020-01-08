@@ -20,7 +20,7 @@
                   <div class="icon">
                     <i class=" bag"></i>
                   </div>
-                  <a href="content/" class="small-box-footer"> تعديل <i class="fa fa-arrow-circle-left"></i></a>
+                  <a href="editPages/content/" class="small-box-footer"> تعديل <i class="fa fa-arrow-circle-left"></i></a>
                 </div>
               </div><!-- ./col -->
               <div class="col-lg-3 col-sm-4 col-xs-6">
@@ -33,7 +33,7 @@
                   <div class="icon">
                     <i class=" "></i>
                   </div>
-                  <a href="translation/" class="small-box-footer"> تعديل <i class="fa fa-arrow-circle-left"></i></a>
+                  <a href="editPages/translation/" class="small-box-footer"> تعديل <i class="fa fa-arrow-circle-left"></i></a>
                 </div>
               </div>
               <div class="col-lg-3 col-sm-4 col-xs-6">
@@ -46,7 +46,7 @@
                   <div class="icon">
                     <i class=" "></i>
                   </div>
-                  <a href="others/" class="small-box-footer"> تعديل <i class="fa fa-arrow-circle-left"></i></a>
+                  <a href="editPages/others/" class="small-box-footer"> تعديل <i class="fa fa-arrow-circle-left"></i></a>
                 </div>
               </div><!-- ./col -->
 

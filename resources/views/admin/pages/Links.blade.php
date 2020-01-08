@@ -38,7 +38,7 @@
         <tr>
             <td class="td">{{$link->name}}</td>
             <td class="td"><a target='_blank' rel='noopener noreferrer' href="{{$link->url}}"> {{$link->url}} </a></td>
-            <td class="td"><a href="edit?id={{$link->id}}" class="btn btn-primary">تعديل</a></td>
+            <td class="td"><a href="links/edit?id={{$link->id}}" class="btn btn-primary">تعديل</a></td>
         </tr>    
     @endforeach
         </tbody>

@@ -49,7 +49,7 @@
                             <tr>
                                 <td style="color:blue">{{$translation->ar}}</td>
                                 <td style="color:blue">{{$translation->en}}</td>
-                                <td><a role="button" class="btn btn-primary" href="edit?id={{$translation->id}}">تعديل</a></td>
+                                <td><a role="button" class="btn btn-primary" href="translation/edit?id={{$translation->id}}">تعديل</a></td>
                             </tr>
                         @endforeach
 

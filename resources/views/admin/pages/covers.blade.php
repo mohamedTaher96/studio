@@ -36,7 +36,7 @@
             <div class="box box-primary">
                 <div class="box-header with-border">
                     <h2 class="box-title"> غلاف جديد  </h2>
-                    <a role="button" href="new/" class="btn btn-primary">إضافة غلاف</a>
+                    <a role="button" href="cover/new/" class="btn btn-primary">إضافة غلاف</a>
                     <table class="table">
                         <thead>
                             <tr>
@@ -51,7 +51,7 @@
                                         <td>صورة ثابتة</td>
                                 <td><a a target='_blank' rel='noopener noreferrer' href="{{asset('images/covers/'.$static->src)}}"><img src="{{asset('images/covers/'.$static->src)}}" ></a></td>
                                         <td>
-                                            <a role="button" href="edit?id=9" class="btn btn-primary">تعديل</a>
+                                            <a role="button" href="cover/edit?id=9" class="btn btn-primary">تعديل</a>
                                         </td>
                                     </tr> 
                             @foreach ($covers as $cover)
@@ -59,8 +59,8 @@
                                     <td>صورة متحركة</td>
                                     <td><a a target='_blank' rel='noopener noreferrer' href="{{asset('images/covers/'.$cover->src)}}"><img src="{{asset('images/covers/'.$cover->src)}}" ></a></td>
                                     <td>
-                                        <a role="button" href="edit?id={{$cover->id}}" class="btn btn-primary">تعديل</a>
-                                        <a role="button" href="delete?id={{$cover->id}}" class="btn btn-primary">مسح</a>
+                                        <a role="button" href="cover/edit?id={{$cover->id}}" class="btn btn-primary">تعديل</a>
+                                        <a role="button" href="cover/delete?id={{$cover->id}}" class="btn btn-primary">مسح</a>
                                     </td>
                                 </tr>                            
                             @endforeach

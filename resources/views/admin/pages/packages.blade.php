@@ -44,7 +44,7 @@
                                 <tr>
                                     <td>{{$package->name}}</td>
                                     <td>{{$package->enName}}</td>
-                                    <td><a href="oprions?id={{$package->id}}">الخيارات </a></td>
+                                    <td><a href="packages/oprions?id={{$package->id}}">الخيارات </a></td>
                                     <td>
                                         <a role="button" class="btn btn-primary" href="packages/edit?id={{$package->id}}">تعديل</a>
                                         <a role="button" class="btn btn-primary" href="packages/delete?id={{$package->id}}">مسح</a>
