@@ -804,14 +804,14 @@ class adminController extends Controller
             $category = $connectCategoryTable::find($request->id);
             $categoryImages =  DB::table('images')->where('category_id', $category->id)->get();
             $file_path = public_path()."/images/categories/".$request->name;
-            unlink($file_path);
+            // unlink($file_path);
             foreach($categoryImages as $item)
             {
                 $file_path = public_path()."/images/category_images/".$item->src;
                 unlink($file_path);
             }
             $category->delete();
-            $category->images()->delete();
+            // $category->images()->delete();
             return  redirect("/admin/gallery/")
             ->with(['delete'=>"true"]);
         }else
@@ -864,7 +864,7 @@ class adminController extends Controller
                 unlink($file_path);
                 $request->logo->move(public_path('images/categories'), $getimageName);
                 DB::table('category')->where('id', $request->id)->update(["category_img"=>$getimageName]);
-                return redirect('/admin/gallery/')->with(['edit'=>"true"]);
+                return redirect('/admin/gallery')->with(['edit'=>"true"]);
             }
         }else
         {

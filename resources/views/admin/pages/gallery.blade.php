@@ -39,7 +39,7 @@
         <div class="box">
                 <div class="box-header">
                   <h3 class="box-title">  التصنيفات  </h3>
-                  <a href="galery/category/new/" role="button" class="btn btn-primary" >إضافة تصنيف</a>
+                  <a href="gallery/category/new/" role="button" class="btn btn-primary" >إضافة تصنيف</a>
                 </div><!-- /.box-header -->
                 <div class="box-body">
                   <table id="example1" class="table table-bordered table-striped">
