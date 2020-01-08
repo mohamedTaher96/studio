@@ -250,7 +250,6 @@ class userController extends Controller
     {
         session_start();
         $newOrder = new order;
-        dd($newOrder);
         $validator = validator::make($request->all(),[
             'company_name'=>'required',
             'acticity'=>'required',

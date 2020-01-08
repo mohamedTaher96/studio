@@ -792,6 +792,7 @@ class adminController extends Controller
     }
     public function deleteCategoy(Request $request)
     {
+        dd('sd');
         session_start();
         if(isset($_SESSION['id']))
         {
