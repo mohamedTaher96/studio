@@ -318,7 +318,7 @@ class userController extends Controller
                 $newOrder->order = $content;
                 $newOrder->company_name = $request->company_name;
                 $newOrder->activity = $request->acticity;
-                $newOrder->contact_number = $request->contact_number;
+                $newOrder->contact_number ='01121388128';
                 $newOrder->email = $request->email;
                 $newOrder->view = 0;
                 $newOrder->save();
