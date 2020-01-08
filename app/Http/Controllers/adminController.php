@@ -727,11 +727,11 @@ class adminController extends Controller
                 $body .= "
                 <tr>
                 <td> $category->name </td>
-                <td> <a target='_blank' rel='noopener noreferrer' href='localhost:8000/images/categories/".$category->category_img."'><img src='/images/categories/".$category->category_img."' ></a> </td>
-                <td ><a target='_blank' rel='noopener noreferrer' href='category/images?category_id=$category->id '> صورة : $images </a></td>
+                <td> <a target='_blank' rel='noopener noreferrer' href='/images/categories/".$category->category_img."'><img src='/images/categories/".$category->category_img."' ></a> </td>
+                <td ><a target='_blank' rel='noopener noreferrer' href='/category/images?category_id=$category->id '> صورة : $images </a></td>
                 <td>$category->created_at </td>
-                <td><a role='button' class='btn btn-primary' href='category/edit?id=$category->id'>تعديل</a >
-                    <a role='button' class='btn btn-primary' onclick= 'return confirm(\"are you sure you want to delete this category : $category->name\")' href='category/delete?id=$category->id&name=$category->category_img'>مسح</a>
+                <td><a role='button' class='btn btn-primary' href='/category/edit?id=$category->id'>تعديل</a >
+                    <a role='button' class='btn btn-primary' onclick= 'return confirm(\"are you sure you want to delete this category : $category->name\")' href='/category/delete?id=$category->id&name=$category->category_img'>مسح</a>
              </td>
             </tr>
                 ";
@@ -792,7 +792,6 @@ class adminController extends Controller
     }
     public function deleteCategoy(Request $request)
     {
-        dd('sd');
         session_start();
         if(isset($_SESSION['id']))
         {
