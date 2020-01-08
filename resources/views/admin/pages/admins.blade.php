@@ -35,7 +35,7 @@
         <small> </small>
         </h1>
         <br>
-        <a  role="button"  class="lang btn btn-primary" href="new"> إضافة مشرف</a>
+        <a  role="button"  class="lang btn btn-primary" href="admins/new"> إضافة مشرف</a>
 </section>
 <section class="">
         <div class="box">
@@ -57,11 +57,11 @@
                                             <tr>
                                                 <td>{{$item->first_name}} {{$item->last_name}}</td>
                                                 <td>{{$item->email}}</td>
-                                                <td><a href="profile?id={{$item->id}}">عرض</a></td>
+                                                <td><a href="admins/profile?id={{$item->id}}">عرض</a></td>
                                                 <td>
                                                     @if ($item->id!='9')
-                                                    <a role="button" class="btn btn-primary" href="delete?id={{$item->id}}" onclick='return confirm("are you sure you want to delete {{$item->first_name}} {{$item->last_name}}")'> مسح</a>
-                                                    <a role="button" class="btn btn-primary" href="edit?id={{$item->id}}"> تعديل</a>
+                                                    <a role="button" class="btn btn-primary" href="admins/delete?id={{$item->id}}" onclick='return confirm("are you sure you want to delete {{$item->first_name}} {{$item->last_name}}")'> مسح</a>
+                                                    <a role="button" class="btn btn-primary" href="admins/edit?id={{$item->id}}"> تعديل</a>
                                                     @endif
                                                 </td>
                                             </tr>

@@ -22,7 +22,7 @@
                 <div class="icon">
                   <i class=""></i>
                 </div>
-                <a href="admins/" class="small-box-footer"> تعديل <i class="fa fa-arrow-circle-left"></i></a>
+                <a href="other/admins/" class="small-box-footer"> تعديل <i class="fa fa-arrow-circle-left"></i></a>
               </div>
             </div><!-- ./col -->  
           @endif
@@ -37,7 +37,7 @@
                 <div class="icon">
                   <i class=""></i>
                 </div>
-                <a href="subscribers/" class="small-box-footer"> تعديل <i class="fa fa-arrow-circle-left"></i></a>
+                <a href="other/subscribers/" class="small-box-footer"> تعديل <i class="fa fa-arrow-circle-left"></i></a>
               </div>
             </div>   
           @endif
@@ -52,7 +52,7 @@
                   <div class="icon">
                     <i class=""></i>
                   </div>
-                  <a href="clients/" class="small-box-footer"> تعديل <i class="fa fa-arrow-circle-left"></i></a>
+                  <a href="other/clients/" class="small-box-footer"> تعديل <i class="fa fa-arrow-circle-left"></i></a>
                 </div>
               </div><!-- ./col -->
             @endif

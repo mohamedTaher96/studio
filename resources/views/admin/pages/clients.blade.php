@@ -39,7 +39,7 @@
         <div class="box">
                 <div class="box-header">
                   <h3 class="box-title">  العملاء  </h3>
-                  <a href="new/" role="button" class="btn btn-primary" >إضافة عميل</a>
+                  <a href="clients/new/" role="button" class="btn btn-primary" >إضافة عميل</a>
                 </div><!-- /.box-header -->
                 <div class="box-body">
                   <table id="example1" class="table table-bordered table-striped">
@@ -60,8 +60,8 @@
                             <td>{{$client->client_email}}</td>
                             <td><a target="_blank" rel="noopener noreferrer"  href="{{asset('images/clients/'.$client->client_logo."")}}"><img src="{{asset('images/clients/'.$client->client_logo)}}" ></a></td>
                             <td>{{$client->created_at}}</td>
-                        <td><a role="button" class="btn btn-primary" href="edit?id={{$client->id}}">تعديل</a >
-                            <a role="button" class="btn btn-primary" onclick="return confirm('are you sure you want to delete this client : {{$client->client_name}}')" href="delete?id={{$client->id}}&name={{$client->client_logo}}">مسح</a>
+                        <td><a role="button" class="btn btn-primary" href="clients/edit?id={{$client->id}}">تعديل</a >
+                            <a role="button" class="btn btn-primary" onclick="return confirm('are you sure you want to delete this client : {{$client->client_name}}')" href="clients/delete?id={{$client->id}}&name={{$client->client_logo}}">مسح</a>
                      </td>
                         </tr>
                     @endforeach  

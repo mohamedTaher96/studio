@@ -26,8 +26,8 @@
         <small> </small>
         </h1>
         <br>
-        <a  role="button"  class="lang btn btn-primary" href="sendMessage"> إرسال رسالة</a>
-        <a  role="button"  class="lang btn btn-primary" href="new"> إضافة مشترك</a>
+        <a  role="button"  class="lang btn btn-primary" href="subscribers/sendMessage"> إرسال رسالة</a>
+        <a  role="button"  class="lang btn btn-primary" href="subscribers/new"> إضافة مشترك</a>
 </section>
 <section class="">
         <div class="box">
@@ -46,7 +46,7 @@
                                         @foreach ($subscribers as $subscriber)
                                             <tr>
                                                 <td>{{$subscriber->email}}</td>
-                                                <td><a role="button" class="btn btn-primary" href="delete?id={{$subscriber->id}}"> مسح</a></td>
+                                                <td><a role="button" class="btn btn-primary" href="subscribers/delete?id={{$subscriber->id}}"> مسح</a></td>
                                             </tr>
                                         @endforeach
                                     </tbody>
