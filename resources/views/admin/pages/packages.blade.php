@@ -23,7 +23,7 @@
         <small> </small>
         </h1>
         <br>
-        <a href="new" class="btn btn-primary">إضافة رزمه</a>
+        <a href="packages/new" class="btn btn-primary">إضافة رزمه</a>
     </section>
     <section class="content">
             <div class="box box-primary">

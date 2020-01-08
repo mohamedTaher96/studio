@@ -804,14 +804,14 @@ class adminController extends Controller
             $category = $connectCategoryTable::find($request->id);
             $categoryImages =  DB::table('images')->where('category_id', $category->id)->get();
             $file_path = public_path()."/images/categories/".$request->name;
-            // unlink($file_path);
+            unlink($file_path);
             foreach($categoryImages as $item)
             {
                 $file_path = public_path()."/images/category_images/".$item->src;
                 unlink($file_path);
             }
             $category->delete();
-            // $category->images()->delete();
+            $category->images()->delete();
             return  redirect("/admin/gallery/")
             ->with(['delete'=>"true"]);
         }else
