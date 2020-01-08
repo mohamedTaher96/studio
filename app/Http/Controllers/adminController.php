@@ -812,7 +812,7 @@ class adminController extends Controller
             }
             $category->delete();
             $category->images()->delete();
-            return  redirect("/admin/gallery/category\/")
+            return  redirect("/admin/gallery/")
             ->with(['delete'=>"true"]);
         }else
         {

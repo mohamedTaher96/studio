@@ -34,7 +34,7 @@
                       <h2 class="box-title">مشرف جديد  </h2>
                     </div><!-- /.box-header -->
                     <!-- form start -->
-                    <form action="add" method="POST" enctype="multipart/form-data">
+                    <form action="/add" method="POST" enctype="multipart/form-data">
                         @csrf
                       <div class="box-body">
                         <div class="form-group">
