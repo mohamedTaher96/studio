@@ -39,8 +39,8 @@
                 <div class="box-body no-padding">
                   <ul class="nav nav-pills nav-stacked">
                     <li class="active"><a href="https://studio-20.herokuapp.com/admin/messages/"><i class="fa fa-inbox"></i> الوارد <span class="label label-primary pull-right">{{$unread}}</span></a></li>
-                    <li><a href="exports"><i class="fa fa-envelope-o"></i> الصادر</a></li>
-                    <li><a id="deleteMessages" href="#" ><i class="fa fa-trash-o"></i> مسح</a></li>
+                    <li><a href="messages/exports"><i class="fa fa-envelope-o"></i> الصادر</a></li>
+                    <li><a id="messages/deleteMessages" href="#" ><i class="fa fa-trash-o"></i> مسح</a></li>
                   </ul>
                 </div><!-- /.box-body -->
               </div><!-- /. box -->
@@ -63,7 +63,7 @@
                             @foreach ($messages as $message)
                             <tr>
                                 <td><input class="check" id="{{$message->id}}" type="checkbox"></td>
-                                <td class="mailbox-name"><a href="order?id={{$message->id}}">{{$message->company_name}}</a></td>
+                                <td class="mailbox-name"><a href="messages/order?id={{$message->id}}">{{$message->company_name}}</a></td>
                                 <td >{{$message->email}}</td>
                                 <td>{{ Carbon\Carbon::parse($message->created_at)->diffForHumans()}}</td>
                             </tr>    
