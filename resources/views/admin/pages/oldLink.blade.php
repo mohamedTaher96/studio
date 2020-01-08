@@ -7,7 +7,7 @@
 @section('content')
 <section class="content-header">
         <h1>
-        {{-- تعديل لينك {{$link->name}}   --}}
+        تعديل لينك {{$link->name}}  
         <small> </small>
         </h1>
 </section>
@@ -15,7 +15,7 @@
     <form >
         @csrf
         <div class="form-group">
-            {{-- <input class="form-control" id="link" link_id={{$link->id}} value="{{$link->url}}">  --}}
+            <input class="form-control" id="link" link_id={{$link->id}} value="{{$link->url}}"> 
         </div>
         <div class="form-group">
             <input id="submit"  class="btn btn-primary" value="تعديل">
