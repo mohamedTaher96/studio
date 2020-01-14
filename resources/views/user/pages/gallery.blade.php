@@ -9,7 +9,7 @@
 @endsection
 @section('content')
     <div class="fixed-bg">
-        <img src="{{asset('images/covers/'.$cover->src)}}">
+        <img src="{{asset('images/covers/'.$covers->src)}}">
     </div>
     <div class="main-content">
             <div class="container-fluid">

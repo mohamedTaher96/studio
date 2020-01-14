@@ -12,11 +12,11 @@
 */
 
 //user
-Route::get('/','userController@home');
-Route::get('/about','userController@about');
-Route::get('/services','userController@services');
-Route::get('/gallery','userController@gallery');
-Route::get('gallery/category','userController@category');
+Route::get("/",'userController@getPage')->defaults('page','home');
+Route::get('/about','userController@getPage')->defaults('page','about');
+Route::get('/services','userController@getPage')->defaults('page','service');
+Route::get('/gallery','userController@getPage')->defaults('page','gallery');
+Route::get('gallery/category','userController@getPage')->defaults('page','category');
 Route::get('/contact','userController@contact');
 Route::get('/language','userController@language');
 Route::post('/contact/data','userController@contactData');
@@ -36,6 +36,9 @@ Route::get('/logout','adminController@adminLogout');
 Route::get('/admin/profile','adminController@adminProfile');
 
 Route::get('admin/','adminController@home');
+
+// Route::get('admin/','adminController@getPage');
+
 
 Route::get('admin/editPages','adminController@editPages');
 Route::get('/admin/editPages/content/','adminController@pageContent');

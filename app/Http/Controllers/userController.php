@@ -17,104 +17,66 @@ use Response;
 
 class userController extends Controller
 {
-    public function home()
-    {
-        $arbicLanguage = DB::table('languages')->pluck('ar', 'key');
-        $englishLanguage = DB::table('languages')->pluck('en', 'key');
-        $covers = DB::table('covers')->where('type', 'moveable')->get();
-        $links =  DB::table('links')->get();
+    public function getPage(Request $request){
         session_start();
-        if(isset($_SESSION['language']))
+        //data required for all pages
+        $covers = DB::table('covers')->where('type', 'static')->first();
+        $links =  DB::table('links')->get();
+        $language = DB::table('languages')->pluck('ar', 'key');
+        $content='';
+        $enContent='';
+        $clients='';
+        $categories='';
+        $category='';
+        $images='';
+        $imageId='';
+        //check the page with the request->page
+        //data of the page='about'    or  data of the page='service'
+        if($request->page == 'about' ||$request->page=='service')
         {
-            if($_SESSION['language']=="English")
-            {
-                return view('user/pages/home')->with(["language"=>$englishLanguage,"covers"=>$covers,"links"=>$links]);
+            $content = DB::table('pages')->where('name', $request->page)->first()->content;
+            $enContent=DB::table('pages')->where('name', $request->page)->first()->enContent;
+            if($request->page=='about'){
+                $clients = DB::table('clients')->get();
             }
         }
-        return view('user/pages/home')->with(["language"=>$arbicLanguage,"covers"=>$covers,"links"=>$links]);
+        //data of the page = 'gallery'
+        elseif($request->page == 'gallery'){
 
-    }
-    public function about()
-    {
-        $arbicLanguage = DB::table('languages')->pluck('ar', 'key');
-        $englishLanguage = DB::table('languages')->pluck('en', 'key');
-        $cover = DB::table('covers')->where('type', 'static')->first();
-        $links =  DB::table('links')->get();
-        $content = DB::table('pages')->where('name', 'about')->first();
-        $conectClientTable = new client;
-        $clients = $conectClientTable::all();
-        session_start();
+            $categories = DB::table('category')->get();
+        }
+        //data of the page = 'category'
+        elseif($request->page=='category')
+        {
+            $imageId=$request->id;
+            $category =  DB::table('category')->where('id', $request->category_id)->first(); 
+            $images = DB::table('images')->where('category_id',$request->category_id)->get();
+        }
+        // data of page = 'home'
+        else
+        {
+            $covers = DB::table('covers')->where('type', 'moveable')->get();
+        }
+        // check the language auth
         if(isset($_SESSION['language']))
         {
-            if($_SESSION['language']=="English")
-            {
-                return view('user/pages/about')->with(["links"=>$links,"cover"=>$cover,"language"=>$englishLanguage,"content"=>$content->enContent,"clients"=>$clients]);
-            }
+            $language = DB::table('languages')->pluck('en', 'key');
+            $content=$enContent;
         }
-        return view('user/pages/about')->with(["links"=>$links,"cover"=>$cover,"language"=>$arbicLanguage,"content"=>$content->content,"clients"=>$clients]);
+        //return the page with the data required
+        return view("user/pages/$request->page")->with([
+            "language"=>$language,"covers"=>$covers,"links"=>$links,"content"=>$content,
+            "clients"=>$clients,'categories'=>$categories,'images'=>$images,'imageId'=>$imageId,
+            'category'=>$category]);
     }
+    
     public function profileDownload()
     {
         $profile = DB::table('covers')->where('type', 'profile')->first()->src;
         $file_path = public_path('files/company_profile/').$profile;
         return Response::download($file_path);
     }
-    public function services()
-    {
-        $arbicLanguage = DB::table('languages')->pluck('ar', 'key');
-        $englishLanguage = DB::table('languages')->pluck('en', 'key');
-        $cover = DB::table('covers')->where('type', 'static')->first();
-        $content = DB::table('pages')->where('name', 'service')->first();
-        $links =  DB::table('links')->get();
-        session_start();
-        if(isset($_SESSION['language']))
-        {
-            if($_SESSION['language']=="English")
-            {
-                return view('user/pages/survice')->with(["links"=>$links,"cover"=>$cover,"language"=>$englishLanguage,"content"=>$content->enContent]);
-            }
-        }
-        return view('user/pages/survice')->with(["links"=>$links,"cover"=>$cover,"language"=>$arbicLanguage,"content"=>$content->content]);
-    }
-    public function gallery()
-    {
-        $arbicLanguage = DB::table('languages')->pluck('ar', 'key');
-        $englishLanguage = DB::table('languages')->pluck('en', 'key');
-        $cover = DB::table('covers')->where('type', 'static')->first();
-        $links =  DB::table('links')->get();
-        $services = DB::table('pages')->where('name', 'services')->where('type',"en")->first();
-        $connectCategoryTable = new category;
-        $categories = $connectCategoryTable::all();
-        session_start();
-        if(isset($_SESSION['language']))
-        {
-            if($_SESSION['language']=="English")
-            {
-                return view('user/pages/gallery')->with(["links"=>$links,"cover"=>$cover,"language"=>$englishLanguage,"categories"=>$categories]);
-            }
-        }
-        return view('user/pages/gallery')->with(["links"=>$links,"cover"=>$cover,"language"=>$arbicLanguage,"categories"=>$categories]);
-    }
-    public function category(Request $request)
-    {
-        $arbicLanguage = DB::table('languages')->pluck('ar', 'key');
-        $englishLanguage = DB::table('languages')->pluck('en', 'key');
-        $cover = DB::table('covers')->where('type', 'static')->first();
-        $links =  DB::table('links')->get();
-        $services = DB::table('pages')->where('name', 'services')->where('type',"en")->first();
-        $images =  DB::table('images')->where('category_id', $request->category_id)->get();     
-        $category =  DB::table('category')->where('id', $request->category_id)->first(); 
-        $imageId = $request->id;
-        session_start();
-        if(isset($_SESSION['language']))
-        {
-            if($_SESSION['language']=="English")
-            {
-                return view('user/pages/category')->with(["imageId"=>$imageId,"links"=>$links,"cover"=>$cover,"language"=>$englishLanguage,"images"=>$images,"category"=>$category]);
-            }
-        }
-        return view('user/pages/category')->with(["imageId"=>$imageId,"links"=>$links,"cover"=>$cover,"language"=>$arbicLanguage,"images"=>$images,"category"=>$category]);
-    }
+
     public function contact()
     {
         $arbicLanguage = DB::table('languages')->pluck('ar', 'key');
@@ -387,5 +349,99 @@ class userController extends Controller
 
         
     }
+    // public function home()
+    // {
+    //     $covers = DB::table('covers')->where('type', 'moveable')->get();
+    //     $links =  DB::table('links')->get();
+    //     session_start();
+    //     if(isset($_SESSION['language']))
+    //     {
+    //         if($_SESSION['language']=="English")
+    //         {
+    //             $englishLanguage = DB::table('languages')->pluck('en', 'key');
+    //             return view('user/pages/home')->with(["language"=>$englishLanguage,"covers"=>$covers,"links"=>$links]);
+    //         }
+    //     }
+    //     $arbicLanguage = DB::table('languages')->pluck('ar', 'key');
+    //     return view('user/pages/home')->with(["language"=>$arbicLanguage,"covers"=>$covers,"links"=>$links]);
+
+    // }
+    // public function about()
+    // {
+    //     $arbicLanguage = DB::table('languages')->pluck('ar', 'key');
+    //     $englishLanguage = DB::table('languages')->pluck('en', 'key');
+    //     $cover = DB::table('covers')->where('type', 'static')->first();
+    //     $links =  DB::table('links')->get();
+    //     $content = DB::table('pages')->where('name', 'about')->first();
+    //     $conectClientTable = new client;
+    //     $clients = $conectClientTable::all();
+    //     session_start();
+    //     if(isset($_SESSION['language']))
+    //     {
+    //         if($_SESSION['language']=="English")
+    //         {
+    //             return view('user/pages/about')->with(["links"=>$links,"cover"=>$cover,"language"=>$englishLanguage,"content"=>$content->enContent,"clients"=>$clients]);
+    //         }
+    //     }
+    //     return view('user/pages/about')->with(["links"=>$links,"cover"=>$cover,"language"=>$arbicLanguage,"content"=>$content->content,"clients"=>$clients]);
+    // }
+
+    // public function services()
+    // {
+    //     $arbicLanguage = DB::table('languages')->pluck('ar', 'key');
+    //     $englishLanguage = DB::table('languages')->pluck('en', 'key');
+    //     $cover = DB::table('covers')->where('type', 'static')->first();
+    //     $content = DB::table('pages')->where('name', 'service')->first();
+    //     $links =  DB::table('links')->get();
+    //     session_start();
+    //     if(isset($_SESSION['language']))
+    //     {
+    //         if($_SESSION['language']=="English")
+    //         {
+    //             return view('user/pages/service')->with(["links"=>$links,"cover"=>$cover,"language"=>$englishLanguage,"content"=>$content->enContent]);
+    //         }
+    //     }
+    //     return view('user/pages/service')->with(["links"=>$links,"cover"=>$cover,"language"=>$arbicLanguage,"content"=>$content->content]);
+    // }
+    // public function gallery()
+    // {
+    //     $arbicLanguage = DB::table('languages')->pluck('ar', 'key');
+    //     $englishLanguage = DB::table('languages')->pluck('en', 'key');
+    //     $cover = DB::table('covers')->where('type', 'static')->first();
+    //     $links =  DB::table('links')->get();
+    //     $services = DB::table('pages')->where('name', 'services')->where('type',"en")->first();
+    //     $connectCategoryTable = new category;
+    //     $categories = $connectCategoryTable::all();
+    //     session_start();
+    //     if(isset($_SESSION['language']))
+    //     {
+    //         if($_SESSION['language']=="English")
+    //         {
+    //             return view('user/pages/gallery')->with(["links"=>$links,"cover"=>$cover,"language"=>$englishLanguage,"categories"=>$categories]);
+    //         }
+    //     }
+    //     return view('user/pages/gallery')->with(["links"=>$links,"cover"=>$cover,"language"=>$arbicLanguage,"categories"=>$categories]);
+    // }
+    // public function category(Request $request)
+    // {
+    //     $arbicLanguage = DB::table('languages')->pluck('ar', 'key');
+    //     $englishLanguage = DB::table('languages')->pluck('en', 'key');
+    //     $cover = DB::table('covers')->where('type', 'static')->first();
+    //     $links =  DB::table('links')->get();
+    //     $services = DB::table('pages')->where('name', 'services')->where('type',"en")->first();
+    //     $images =  DB::table('images')->where('category_id', $request->category_id)->get();     
+    //     $category =  DB::table('category')->where('id', $request->category_id)->first(); 
+    //     $imageId = $request->id;
+    //     session_start();
+    //     if(isset($_SESSION['language']))
+    //     {
+    //         if($_SESSION['language']=="English")
+    //         {
+    //             return view('user/pages/category')->with(["imageId"=>$imageId,"links"=>$links,"cover"=>$cover,"language"=>$englishLanguage,"images"=>$images,"category"=>$category]);
+    //         }
+    //     }
+    //     return view('user/pages/category')->with(["imageId"=>$imageId,"links"=>$links,"cover"=>$cover,"language"=>$arbicLanguage,"images"=>$images,"category"=>$category]);
+    // }
+
 
 }
